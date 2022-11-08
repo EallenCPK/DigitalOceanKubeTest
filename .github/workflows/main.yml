@@ -1,7 +1,6 @@
 name: Build & Push to Digital Ocean Registry
 
-on:
-  workflow_dispatch:
+on: push
 
 jobs:
   build:
