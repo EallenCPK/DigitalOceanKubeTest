@@ -17,7 +17,7 @@ jobs:
         password: dop_v1_d7e83d33b165bbd6de522a5f3e3fdf94fd3b5f1e412d3e88e43e6b383e99c7e9
 
     - name: Build latest
-      run: docker build -t registry.digitalocean.com/myreg887879/myapp .
+      run: docker build -t registry.digitalocean.com/myreg887879 .
 
     - name: Push to Digital Ocean Registry
-      run: docker push registry.digitalocean.com/myreg887879/myapp
+      run: docker push registry.digitalocean.com/myreg887879
