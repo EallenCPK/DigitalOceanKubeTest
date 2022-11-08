@@ -1,0 +1,24 @@
+name: Build & Push to Digital Ocean Registry
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Git Checkout
+      uses: actions/checkout@v1
+
+    - name: Login to Digital Ocean Registry
+      uses: docker/login-action@v1
+      with:
+        registry: registry.digitalocean.com
+        username: dop_v1_d7e83d33b165bbd6de522a5f3e3fdf94fd3b5f1e412d3e88e43e6b383e99c7e9
+        password: dop_v1_d7e83d33b165bbd6de522a5f3e3fdf94fd3b5f1e412d3e88e43e6b383e99c7e9
+
+    - name: Build latest
+      run: docker build -t registry.digitalocean.com/myreg887879/myapp .
+
+    - name: Push to Digital Ocean Registry
+      run: docker push registry.digitalocean.com/myreg887879/myapp
