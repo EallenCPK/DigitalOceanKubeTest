@@ -25,9 +25,14 @@ jobs:
       run:  | 
        docker build ./ -t acr34223.azurecr.io/helloworld:${{ github.run_id }}
        docker push acr34223.azurecr.io/helloworld:${{ github.run_id }} 
-       
-    - name: Azure login
-      id: login
-      uses: azure/login@v1.4.3
+    - name: Az CLI login
+      uses: azure/login@v1
       with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+        client-id: ${{ 7c603464-b7f4-46ff-847b-38526302a0ee }}
+        tenant-id: ${{ 9604c138-e5d6-4c98-a4fc-2d67d6fd954e }}
+        subscription-id: ${{ 4b88b802-abfd-413d-9c62-a3357ce9b003 }}
+#     - name: Azure login
+#       id: login
+#       uses: azure/login@v1.4.3
+#       with:
+#           creds: ${{ secrets.AZURE_CREDENTIALS }}
