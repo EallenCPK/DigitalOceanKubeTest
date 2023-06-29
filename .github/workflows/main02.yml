@@ -18,8 +18,8 @@ jobs:
       uses: azure/docker-login@v1
       with:
         login-server: 'acr34223.azurecr.io'
-        username: ${{ acr34223 }}
-        password: ${{ n7DPURdt0Y9UsYhj7jm5WxmGpjFwdo1YEYJoBYO+2I+ACRC8+0GJ }} 
+        username: ${{ 'acr34223' }}
+        password: ${{ 'n7DPURdt0Y9UsYhj7jm5WxmGpjFwdo1YEYJoBYO+2I+ACRC8+0GJ' }} 
     
     - name: Build and Push the Docker image
       run:  | 
