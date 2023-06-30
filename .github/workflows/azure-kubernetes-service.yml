@@ -10,15 +10,16 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: 'Az CLI login'
-      uses: azure/login@v1
-      with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+#     - name: 'Az CLI login'
+#       uses: azure/login@v1
+#       with:
+#           client-id: ${{ secrets.AZURE_CLIENT_ID }}
+#           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+#           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
   
     - name: 'Run Azure CLI commands'
       run: |
+          az login --service-principal -u 12c7bde7-b398-474e-9196-d24e044e9b26 -p 1RR8Q~iHqO7g9XJWWFdtDMmYKLp_y751I2aDRdwB --tenant 9604c138-e5d6-4c98-a4fc-2d67d6fd954e
           az account show
           az group list
           pwd
